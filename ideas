@@ -1,0 +1,62 @@
+Things to model
+===============
+
+Classes
+-------
+
+Meter (a physical device)
+MeteringPoint
+LogicalMeteringPoint (a set of set operations on MeteringPoint)
+
+Resources
+---------
+
+Things being metered
+~~~~~~~~~~~~~~~~~~~~
+
+Electricity
+Data
+NaturalGas
+Water
+Sewage
+Environment
+
+Quantities being measured
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Voltage / potential difference (V) (probably wants defining (peak-to-peak?) I don't know enough)
+Current (A)
+Cumulative electricity usage (KWh (or Ws?))
+Instantaneous power draw (KW)
+
+Cumulative usage (m^3)
+Flow (m^3/s)
+Pressure (Pa)
+
+Temperature (C)
+Wind speed (ms^-1)
+Cumulative rain fall (m)
+Relative humidity (%)
+Cloud cover (% (?))
+
+Data in / out (bytes)
+Throughput (bytes/s)
+
+Relationships
+-------------
+
+downstreamOf
+upstreamOf   (relations between meters)
+
+supplies (where object is an OxPoints resource (or something more general))
+
+includes
+excludes (for use with logical meters. e.g. an OUCS logical meter includes Trans A+B, excludes the meter on No21)
+
+Dimensions
+----------
+
+meter
+quanity
+dcterms:date
+
