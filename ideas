@@ -45,6 +45,10 @@ Throughput (bytes/s)
 Relationships
 -------------
 
+measuredQuantity (from MeteringPoint to thing being metered (e.g. Electricity))
+measuredAt       (from MeteringPoint to Meter)
+
+
 downstreamOf
 upstreamOf   (relations between meters)
 
@@ -57,6 +61,36 @@ Dimensions
 ----------
 
 meter
-quanity
+quantity
 dcterms:date
+
+Example
+-------
+
+:m1 a meter:Meter ;
+   meter:measure :elec1 ;
+   rdfs:label "Meter on transformer one for OUCS" ;
+   geo:loc <http://oxpoints.oucs.ox.ac.uk/id/40002001> .
+
+:elec1 a meter:Measure ;
+   meter:measuredQuantity meter:Electricity ;
+   meter:meteredAt :m1 ;
+   meter:upstreamOf :no21 .
+
+:no21 a meter:Measure ;
+   meter:measuredQuantity meter:Electricity ;
+   meter:meteredAt :m2 ;
+   meter:downstreamOf :elec1 .
+
+:oucs a meter:LogicalMeasure ;
+   meter:measuredQuantity meter:Electricity ;
+   meter:includes :elec1 ;
+   meter:excludes :no21 ;
+   meter:supplies <http://oxpoints.oucs.ox.ac.uk/id/40002001> .
+
+:p1 a scovo:Item, meter:Measurement ;
+   meter:measure :elec1 ;
+   meter:variable meter:Current ;
+   dcterms:date "2010-07-27T18:01:23"^^xsd:date ;
+   rdf:value "12.4"^^xsd:float .
 
