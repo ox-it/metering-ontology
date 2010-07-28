@@ -5,8 +5,10 @@ Classes
 -------
 
 Meter (a physical device)
-MeteringPoint
-LogicalMeteringPoint (a set of set operations on MeteringPoint)
+
+Metering (physical device X thing being metered X what is downstream)
+
+LogicalMetering (a set of set operations on MeteringPoint)
 
 Resources
 ---------
@@ -21,8 +23,18 @@ Water
 Sewage
 Environment
 
-Quantities being measured
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Diesel  \
+Petrol   > recording milage / fuel consumption of vehicles?
+Vehicle /
+
+Energy (?)
+
+Quantities being measured (Metrics)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Metric
+InstantaneousMetric
+CumulativeMetric
 
 Voltage / potential difference (V) (probably wants defining (peak-to-peak?) I don't know enough)
 Current (A)
