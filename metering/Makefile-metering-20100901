@@ -1,0 +1,15 @@
+XSLT=xsltproc --catalogs
+
+all: vocab-0.1.html
+	cp -f vocab-0.1.html index.html
+	cp -f vocab-0.1.rdf index.rdf
+
+vocab-0.1.html: vocab-0.1.rdf
+	$(XSLT) $(XSLTOPT)  -o vocab-0.1.html ../2004/03/toolchain/vocab-html-docs.xsl vocab-0.1.rdf
+
+vocab-0.1.htaccess: vocab-0.1.rdf
+	$(XSLT) $(XSLTOPT)  -o vocab-0.1.htaccess ../2004/03/toolchain/vocab-htaccess.xsl vocab-0.1.rdf
+
+clean: 
+	rm -f vocab-0.1.html
+

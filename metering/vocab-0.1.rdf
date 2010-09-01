@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY meter "http://vocab.ox.ac.uk/meter#">
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+    <!ENTITY event "http://purl.org/NET/c4dm/event.owl#">
+    <!ENTITY dctype "http://purl.org/dc/dcmitype/">
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+    <!ENTITY admingeo "http://data.ordnancesurvey.co.uk/ontology/admingeo/">
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#">
+]>
+
+<rdf:RDF
+    xmlns:meter="&meter;"
+    xmlns:foaf="&foaf;"
+    xmlns:event="&event;"
+    xmlns:xsd="&xsd;"
+    xmlns:skos="&skos;"
+    xmlns:admingeo="&admingeo;"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="&rdfs;"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:dctype="&dctype;"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:vann="http://purl.org/vocab/vann/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#">
+
+  <owl:Ontology rdf:about="">
+    <dc:title>Ontology for modelling metering</dc:title>
+    <dc:identifier>http://vocab.ox.ac.uk/meter#</dc:identifier>
+    <dc:description>An ontology for modelling meters of various kinds and their readings.</dc:description>
+    <vann:preferredNamespaceUri>http://vocab.ox.ac.uk/meter#</vann:preferredNamespaceUri>
+    <vann:preferredNamespacePrefix>meter</vann:preferredNamespacePrefix>
+
+    <dct:isVersionOf rdf:resource="&meter;"/>
+
+    <dc:contributor rdf:resource="http://alexdutton.co.uk/rdf#id"/>
+    <dc:contributor>
+      <foaf:Person foaf:name="Janet McKnight" foaf:givenName="Janet" foaf:familyName="McKnight">
+        <foaf:mbox rdf:resource="mailto:janet.mcknight@oucs.ox.ac.uk"/>
+      </foaf:Person>
+    </dc:contributor>
+
+    <dct:hasFormat>
+      <dctype:Text rdf:about="http://vocab.ox.ac.uk/meter/index.html">
+        <dc:format>
+          <dct:IMT>
+            <rdf:value>text/html</rdf:value>
+            <rdfs:label xml:lang="en">HTML</rdfs:label>
+          </dct:IMT>
+        </dc:format>
+      </dctype:Text>
+    </dct:hasFormat>
+
+    <dct:hasFormat>
+      <dctype:Text rdf:about="http://vocab.ox.ac.uk/meter/index.rdf">
+        <dc:format>
+          <dct:IMT>
+            <rdf:value>application/rdf+xml</rdf:value>
+            <rdfs:label xml:lang="en">RDF/XML</rdfs:label>
+          </dct:IMT>
+        </dc:format>
+      </dctype:Text>
+    </dct:hasFormat>
+
+  </owl:Ontology>
+
+  <owl:Class rdf:about="&meter;MeterableResource">
+    <rdfs:label>meterable resource</rdfs:label>
+    <rdfs:comment>A physical phenomenon that can be quantified in one or more dimensions.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+  </owl:Class>
+
+  <meter:MeterableResource rdf:about="&meter;electricity">
+    <rdfs:label>electricity</rdfs:label>
+    <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Electricity"/>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+  </meter:MeterableResource>
+  <meter:MeterableResource rdf:about="&meter;data">
+    <rdfs:label>data</rdfs:label>
+    <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Data_(computing)"/>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+  </meter:MeterableResource>
+  <meter:MeterableResource rdf:about="&meter;water">
+    <rdfs:label>water</rdfs:label>
+    <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Water"/>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+  </meter:MeterableResource>
+  <meter:MeterableResource rdf:about="&meter;natural-gas">
+    <rdfs:label>natural gas</rdfs:label>
+    <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Natural_gas"/>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+  </meter:MeterableResource>
+
+  <owl:Class rdf:about="&meter;Metric">
+    <rdfs:label>metering metric</rdfs:label>
+    <rdfs:comment>An abstract class for metering metrics.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="&meter;InstantaneousMetric">
+    <rdfs:label>instananeous metering metric</rdfs:label>
+    <rdfs:comment>A class for metrics measured at a single point in time.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="&meter;Metric"/>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+  </owl:Class>
+  <owl:Class rdf:about="&meter;CumulativeMetric">
+    <rdfs:label>cumulative metering metric</rdfs:label>
+    <rdfs:comment>A class for metrics measured relative to some other point in the past.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="&meter;Metric"/>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+  </owl:Class>
+
+  <owl:InstantaneousMetric rdf:about="&meter;voltage">
+    <rdfs:label>voltage</rdfs:label>
+    <rdfs:comment>RMS potential difference measured across a single phase load</rdfs:comment>
+    <meter:unit>Volts</meter:unit>
+    <meter:unitAbbrev>V</meter:unitAbbrev>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+  </owl:InstantaneousMetric>
+
+
+  <rdf:Property rdf:about="&meter;unit">
+    <rdfs:label>name of units used</rdfs:label>
+    <rdfs:comment>The unabbreviated name of the units used when recording a given metric.</rdfs:comment>
+    <rdfs:domain rdf:resource="&meter;Metric"/>
+    <rdfs:range rdf:resource="&xsd;string"/>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="&meter;unitAbbrev">
+    <rdfs:label>abbreviated name of units used</rdfs:label>
+    <rdfs:comment>The abbreviated name of the units used when recording a given metric.</rdfs:comment>
+    <rdfs:domain rdf:resource="&meter;Metric"/>
+    <rdfs:range rdf:resource="&xsd;string"/>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+  </rdf:Property>
+
+</rdf:RDF>

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:wot="http://xmlns.com/wot/0.1/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dct="http://purl.org/dc/terms/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:vann="http://purl.org/vocab/vann/" xmlns:cc="http://web.resource.org/cc/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" lang="en"><head><title>Ontology for modelling metering</title><link rel="meta" type="application/rdf+xml" title="Ontology for modelling metering" href="http://vocab.ox.ac.uk/meter#.rdf"/><style type="text/css">
+    code.xml .text {
+      color: #000000;
+      background: transparent;
+    }
+    code.xml .elem {
+      color: #000080; 
+      background: transparent;
+    }
+    code.xml .attr {
+      color: #008080;
+      background: transparent;
+    }
+    code.xml .attrVal {
+      color: #666666;
+      background: transparent;
+    }
+    code.xml .highlight {
+      background: #ffff00;
+    }
+    
+	h1, h2, h3, h4, h5, h6 {
+		font-family: Georgia, "Times New Roman", Times, serif;
+		font-style:italic;
+	}    
+	
+	pre {
+	  border: 1px #9999cc dotted;
+	  background-color: #f3f3ff;
+	  color: #000000; 
+    width: 90%;
+	}
+	
+	blockquote {
+	  border-style: solid;
+	  border-color: #d0dbe7;
+	  border-width: 0 0 0 .25em;
+	  padding-left: 0.5em;
+	}
+	
+	blockquote, q {
+	  font-style: italic;
+	} 
+	
+	body {
+		font-family: verdana, geneva, arial, sans-serif;
+	}
+	
+	a, p,blockquote, q, dl, dd, dt {
+		font-family: verdana, geneva, arial, sans-serif;
+		font-size: 1em;
+	}
+	
+	
+	dt {
+		font-weight: bold;
+	}
+	
+	
+:link { color: #00C; background: transparent }
+:visited { color: #609; background: transparent }
+:link:active, :visited:active { color: #C00; background: transparent }
+:link:hover, :visited:hover { background: #ffa; }
+code :link, code :visited { color: inherit; }
+
+h1, h2, h3, h4, h5, h6 { text-align: left }
+h1, h2, h3 { color: #996633; background: transparent; }
+h1 { font: 900 170% sans-serif; border-bottom: 1px solid gray; } 
+h2 { font: 800 140% sans-serif; border-bottom: 1px solid gray; } 
+h3 { font: 700 120% sans-serif } 
+h4 { font: bold 100% sans-serif }
+h5 { font: italic 100% sans-serif }
+h6 { font: small-caps 100% sans-serif }
+
+body { padding: 0 4em 2em 4em;  line-height: 1.35; }
+	
+pre { margin-left: 2em; /* overflow: auto; */ }
+h1 + h2 { margin-top: 0; }
+h2 { margin: 3em 0 1em 0; }
+h2 + h3 { margin-top: 0; }
+h3 { margin: 2em 0 1em 0; }
+h4 { margin: 1.5em 0 0.75em 0; }
+h5, h6 { margin: 1.5em 0 1em; }
+p { margin: 1em 0; }
+dl, dd { margin-top: 0; margin-bottom: 0; }
+dt { margin-top: 0.75em; margin-bottom: 0.25em; clear: left; }
+dd dt { margin-top: 0.25em; margin-bottom: 0; }
+dd p { margin-top: 0; }
+p + * &gt; li, dd li { margin: 1em 0; }
+dt, dfn { font-weight: bold; font-style: normal; }
+pre, code { font-size: inherit; font-family: monospace; }
+pre strong { color: black; font: inherit; font-weight: bold; background: yellow; }
+pre em { font-weight: bolder; font-style: normal; }
+var sub { vertical-align: bottom; font-size: smaller; position: relative; top: 0.1em; }
+blockquote { margin: 0 0 0 2em; border: 0; padding: 0; font-style: italic; }
+ins { background: green; color: white; /* color: green; border: solid thin lime; padding: 0.3em; line-height: 1.6em; */ text-decoration: none; }
+del { background: maroon; color: white; /* color: maroon; border: solid thin red; padding: 0.3em; line-height: 1.6em; */ text-decoration: line-through; }
+body ins, body del { display: block; }
+body * ins, body * del { display: inline; }
+
+table.properties { width: 90%; }
+table.properties th { text-align: right; width: 9em; font-weight: normal;}
+
+table { border-collapse: collapse;  border: solid #999999 1px;}
+table thead { border-bottom: solid #999999 2px; }
+table td, table th { border-left: solid #999999 1px; border-right: solid #999999 1px; border-bottom: solid #999999 1px;; vertical-align: top; padding: 0.2em; }
+
+.historyList {
+  font-size: 0.9em;
+}
+
+    </style></head><body><h1>Ontology for modelling metering</h1><dl class="doc-info"><dt>This Version</dt><dd><a href="http://vocab.ox.ac.uk/meter#">http://vocab.ox.ac.uk/meter#</a> [<a href="http://vocab.ox.ac.uk/meter/index.html">HTML</a>] [<a href="http://vocab.ox.ac.uk/meter/index.rdf">RDF/XML</a>]</dd><dt>Latest Version</dt><dd><a href="http://vocab.ox.ac.uk/meter#">http://vocab.ox.ac.uk/meter#</a></dd><dt>Authors</dt><dt>Contributors</dt><dd/><dd>
+      
+        
+      
+    </dd></dl><h2 id="toc">Table of Contents</h2><ul class="toc"><li><a href="#sec-introduction">Introduction</a></li><li><a href="#sec-namespace">Namespace</a></li><li><a href="#sec-terms">Summary of Terms</a></li><li><a href="#sec-classes">Vocabulary Classes</a></li><li><a href="#sec-properties">Vocabulary Properties</a></li><li><a href="#sec-schema">RDF Schema</a></li></ul><h2 id="sec-introduction">Introduction</h2><p class="description">An ontology for modelling meters of various kinds and their readings.</p><h2 id="sec-changes">Changes From Previous Version</h2><ul/><h2 id="sec-namespace">Namespace</h2><p>The URI for this vocabulary is </p><pre><code>http://vocab.ox.ac.uk/meter#</code></pre><p>
+          When used in XML documents the suggested prefix is <code>meter</code></p><p>Each class or property in the vocabulary has a URI constructed by appending a term name to the vocabulary URI. For example:</p><pre><code>http://vocab.ox.ac.uk/meter#unit
+http://vocab.ox.ac.uk/meter#MeterableResource</code></pre><p>The term name for a class always starts with an uppercase character. Where the term name is comprised of multiple 
+      concatenated words, the leading character of each word will be an uppercase character. For example:
+      </p><pre><code>MeterableResource
+Metric</code></pre><p>The term name for a property always starts with an lowercase character. Where the term name is comprised of multiple 
+      concatenated words, the leading character of the second and each subsequent word will be an uppercase character. For example:
+      </p><pre><code>unit
+unitAbbrev</code></pre><h2 id="sec-terms">Summary of Terms</h2><p>This vocabulary defines
+
+      4 classes 
+        
+      and 
+      2 properties 
+        
+      .
+    </p><table><tr><th>Term Name</th><th>Type</th><th>Definition</th></tr><tr><td><a href="#term-CumulativeMetric" title="http://vocab.ox.ac.uk/meter#CumulativeMetric">CumulativeMetric</a></td><td>class</td><td>A class for metrics measured relative to some other point in the past.</td></tr><tr><td><a href="#term-InstantaneousMetric" title="http://vocab.ox.ac.uk/meter#InstantaneousMetric">InstantaneousMetric</a></td><td>class</td><td>A class for metrics measured at a single point in time.</td></tr><tr><td><a href="#term-MeterableResource" title="http://vocab.ox.ac.uk/meter#MeterableResource">MeterableResource</a></td><td>class</td><td>A physical phenomenon that can be quantified in one or more dimensions.</td></tr><tr><td><a href="#term-Metric" title="http://vocab.ox.ac.uk/meter#Metric">Metric</a></td><td>class</td><td>An abstract class for metering metrics.</td></tr><tr><td><a href="#term-unit" title="http://vocab.ox.ac.uk/meter#unit">unit</a></td><td>property</td><td>The unabbreviated name of the units used when recording a given metric.</td></tr><tr><td><a href="#term-unitAbbrev" title="http://vocab.ox.ac.uk/meter#unitAbbrev">unitAbbrev</a></td><td>property</td><td>The abbreviated name of the units used when recording a given metric.</td></tr></table><h2 id="sec-classes">Vocabulary Classes</h2><div class="class"><h3 id="term-CumulativeMetric">Class: CumulativeMetric</h3><div class="description"><p class="comment">A class for metrics measured relative to some other point in the past.</p><table class="properties"><tbody><tr><th>URI:</th><td>http://vocab.ox.ac.uk/meter#CumulativeMetric</td></tr><tr><th>Label:</th><td>cumulative metering metric</td></tr><tr><th>Subclass of</th><td><a href="#term-Metric" title="http://vocab.ox.ac.uk/meter#Metric">meter:Metric</a></td></tr><tr><th>Paraphrase (experimental)</th><td>
+              
+                  A <a href="#term-CumulativeMetric" title="http://vocab.ox.ac.uk/meter#CumulativeMetric">meter:CumulativeMetric</a>
+                 is something that, amongst other things, 
+                
+        is a
+        <a href="#term-Metric" title="http://vocab.ox.ac.uk/meter#Metric">meter:Metric</a></td></tr></tbody></table><h4>History</h4><ul class="historyList"/></div></div><div class="class"><h3 id="term-InstantaneousMetric">Class: InstantaneousMetric</h3><div class="description"><p class="comment">A class for metrics measured at a single point in time.</p><table class="properties"><tbody><tr><th>URI:</th><td>http://vocab.ox.ac.uk/meter#InstantaneousMetric</td></tr><tr><th>Label:</th><td>instananeous metering metric</td></tr><tr><th>Subclass of</th><td><a href="#term-Metric" title="http://vocab.ox.ac.uk/meter#Metric">meter:Metric</a></td></tr><tr><th>Paraphrase (experimental)</th><td>
+              
+                  A <a href="#term-InstantaneousMetric" title="http://vocab.ox.ac.uk/meter#InstantaneousMetric">meter:InstantaneousMetric</a>
+                 is something that, amongst other things, 
+                
+        is a
+        <a href="#term-Metric" title="http://vocab.ox.ac.uk/meter#Metric">meter:Metric</a></td></tr></tbody></table><h4>History</h4><ul class="historyList"/></div></div><div class="class"><h3 id="term-MeterableResource">Class: MeterableResource</h3><div class="description"><p class="comment">A physical phenomenon that can be quantified in one or more dimensions.</p><table class="properties"><tbody><tr><th>URI:</th><td>http://vocab.ox.ac.uk/meter#MeterableResource</td></tr><tr><th>Label:</th><td>meterable resource</td></tr></tbody></table><h4>History</h4><ul class="historyList"/></div></div><div class="class"><h3 id="term-Metric">Class: Metric</h3><div class="description"><p class="comment">An abstract class for metering metrics.</p><table class="properties"><tbody><tr><th>URI:</th><td>http://vocab.ox.ac.uk/meter#Metric</td></tr><tr><th>Label:</th><td>metering metric</td></tr></tbody></table><h4>History</h4><ul class="historyList"/></div></div><h2 id="sec-properties">Vocabulary Properties</h2><div class="property"><h3 id="term-unit">Property: unit</h3><div class="description"><p class="comment">The unabbreviated name of the units used when recording a given metric.</p><table class="properties"><tbody><tr><th>URI:</th><td>http://vocab.ox.ac.uk/meter#unit</td></tr><tr><th>Label:</th><td>name of units used</td></tr><tr><th>Domain</th><td><a href="#term-Metric" title="http://vocab.ox.ac.uk/meter#Metric">meter:Metric</a></td></tr><tr><th>Range</th><td><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></td></tr><tr><th>Paraphrase (experimental)</th><td>
+                    Having a <a href="#term-unit" title="http://vocab.ox.ac.uk/meter#unit">meter:unit</a>
+                    implies being
+                   something that, amongst other things, is a <a href="#term-Metric" title="http://vocab.ox.ac.uk/meter#Metric">meter:Metric</a></td></tr></tbody></table><h4>History</h4><ul class="historyList"/></div></div><div class="property"><h3 id="term-unitAbbrev">Property: unitAbbrev</h3><div class="description"><p class="comment">The abbreviated name of the units used when recording a given metric.</p><table class="properties"><tbody><tr><th>URI:</th><td>http://vocab.ox.ac.uk/meter#unitAbbrev</td></tr><tr><th>Label:</th><td>abbreviated name of units used</td></tr><tr><th>Domain</th><td><a href="#term-Metric" title="http://vocab.ox.ac.uk/meter#Metric">meter:Metric</a></td></tr><tr><th>Range</th><td><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></td></tr><tr><th>Paraphrase (experimental)</th><td>
+                    Having a <a href="#term-unitAbbrev" title="http://vocab.ox.ac.uk/meter#unitAbbrev">meter:unitAbbrev</a>
+                    implies being
+                   something that, amongst other things, is a <a href="#term-Metric" title="http://vocab.ox.ac.uk/meter#Metric">meter:Metric</a></td></tr></tbody></table><h4>History</h4><ul class="historyList"/></div></div><h2 id="sec-schema">RDF Schema</h2><p>The schema included here is informational only. The normative schema can be found at <a href="http://vocab.ox.ac.uk/meter#.rdf">http://vocab.ox.ac.uk/meter#.rdf</a></p><pre><code class="xml"><span class="elem">&lt;rdf:RDF</span>
+   <span class="attr">xmlns:owl</span>="<span class="attrVal">http://www.w3.org/2002/07/owl#</span>"
+   <span class="attr">xmlns:vann</span>="<span class="attrVal">http://purl.org/vocab/vann/</span>"
+   <span class="attr">xmlns:dct</span>="<span class="attrVal">http://purl.org/dc/terms/</span>"
+   <span class="attr">xmlns:dctype</span>="<span class="attrVal">http://purl.org/dc/dcmitype/</span>"
+   <span class="attr">xmlns:dc</span>="<span class="attrVal">http://purl.org/dc/elements/1.1/</span>"
+   <span class="attr">xmlns:rdfs</span>="<span class="attrVal">http://www.w3.org/2000/01/rdf-schema#</span>"
+   <span class="attr">xmlns:rdf</span>="<span class="attrVal">http://www.w3.org/1999/02/22-rdf-syntax-ns#</span>"
+   <span class="attr">xmlns:admingeo</span>="<span class="attrVal">http://data.ordnancesurvey.co.uk/ontology/admingeo/</span>"
+   <span class="attr">xmlns:skos</span>="<span class="attrVal">http://www.w3.org/2004/02/skos/core#</span>"
+   <span class="attr">xmlns:xsd</span>="<span class="attrVal">http://www.w3.org/2001/XMLSchema#</span>"
+   <span class="attr">xmlns:event</span>="<span class="attrVal">http://purl.org/NET/c4dm/event.owl#</span>"
+   <span class="attr">xmlns:foaf</span>="<span class="attrVal">http://xmlns.com/foaf/0.1/</span>"
+   <span class="attr">xmlns:meter</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#</span>"<span class="elem">&gt;</span>
+  
+  <span class="elem">&lt;owl:Ontology</span> <span class="attr">rdf:about</span>="<span class="attrVal"/>"<span class="elem">&gt;</span>
+    <span class="elem">&lt;dc:title</span><span class="elem">&gt;</span><span class="text">Ontology for modelling metering</span><span class="elem">&lt;/dc:title&gt;</span>
+    <span class="elem">&lt;dc:identifier</span><span class="elem">&gt;</span><span class="text">http://vocab.ox.ac.uk/meter#</span><span class="elem">&lt;/dc:identifier&gt;</span>
+    <span class="elem">&lt;dc:description</span><span class="elem">&gt;</span>
+      <span class="text">An ontology for modelling meters of various kinds and their readings.</span>
+    <span class="elem">&lt;/dc:description&gt;</span>
+    <span class="elem">&lt;vann:preferredNamespaceUri</span><span class="elem">&gt;</span><span class="text">http://vocab.ox.ac.uk/meter#</span><span class="elem">&lt;/vann:preferredNamespaceUri&gt;</span>
+    <span class="elem">&lt;vann:preferredNamespacePrefix</span><span class="elem">&gt;</span><span class="text">meter</span><span class="elem">&lt;/vann:preferredNamespacePrefix&gt;</span>
+    <span class="elem">&lt;dct:isVersionOf</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#</span>"<span class="elem">/&gt;</span>
+    <span class="elem">&lt;dc:contributor</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://alexdutton.co.uk/rdf#id</span>"<span class="elem">/&gt;</span>
+    <span class="elem">&lt;dc:contributor</span><span class="elem">&gt;</span>
+      <span class="elem">&lt;foaf:Person</span>
+         <span class="attr">foaf:name</span>="<span class="attrVal">Janet McKnight</span>"
+         <span class="attr">foaf:givenName</span>="<span class="attrVal">Janet</span>"
+         <span class="attr">foaf:familyName</span>="<span class="attrVal">McKnight</span>"<span class="elem">&gt;</span>
+        <span class="elem">&lt;foaf:mbox</span> <span class="attr">rdf:resource</span>="<span class="attrVal">mailto:janet.mcknight@oucs.ox.ac.uk</span>"<span class="elem">/&gt;</span>
+      <span class="elem">&lt;/foaf:Person&gt;</span>
+    <span class="elem">&lt;/dc:contributor&gt;</span>
+    <span class="elem">&lt;dct:hasFormat</span><span class="elem">&gt;</span>
+      <span class="elem">&lt;dctype:Text</span> <span class="attr">rdf:about</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter/index.html</span>"<span class="elem">&gt;</span>
+        <span class="elem">&lt;dc:format</span><span class="elem">&gt;</span>
+          <span class="elem">&lt;dct:IMT</span><span class="elem">&gt;</span>
+            <span class="elem">&lt;rdf:value</span><span class="elem">&gt;</span><span class="text">text/html</span><span class="elem">&lt;/rdf:value&gt;</span>
+            <span class="elem">&lt;rdfs:label</span> <span class="attr">xml:lang</span>="<span class="attrVal">en</span>"<span class="elem">&gt;</span><span class="text">HTML</span><span class="elem">&lt;/rdfs:label&gt;</span>
+          <span class="elem">&lt;/dct:IMT&gt;</span>
+        <span class="elem">&lt;/dc:format&gt;</span>
+      <span class="elem">&lt;/dctype:Text&gt;</span>
+    <span class="elem">&lt;/dct:hasFormat&gt;</span>
+    <span class="elem">&lt;dct:hasFormat</span><span class="elem">&gt;</span>
+      <span class="elem">&lt;dctype:Text</span> <span class="attr">rdf:about</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter/index.rdf</span>"<span class="elem">&gt;</span>
+        <span class="elem">&lt;dc:format</span><span class="elem">&gt;</span>
+          <span class="elem">&lt;dct:IMT</span><span class="elem">&gt;</span>
+            <span class="elem">&lt;rdf:value</span><span class="elem">&gt;</span><span class="text">application/rdf+xml</span><span class="elem">&lt;/rdf:value&gt;</span>
+            <span class="elem">&lt;rdfs:label</span> <span class="attr">xml:lang</span>="<span class="attrVal">en</span>"<span class="elem">&gt;</span><span class="text">RDF/XML</span><span class="elem">&lt;/rdfs:label&gt;</span>
+          <span class="elem">&lt;/dct:IMT&gt;</span>
+        <span class="elem">&lt;/dc:format&gt;</span>
+      <span class="elem">&lt;/dctype:Text&gt;</span>
+    <span class="elem">&lt;/dct:hasFormat&gt;</span>
+  <span class="elem">&lt;/owl:Ontology&gt;</span>
+  
+  <span class="elem">&lt;owl:Class</span> <span class="attr">rdf:about</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#MeterableResource</span>"<span class="elem">&gt;</span>
+    <span class="elem">&lt;rdfs:label</span><span class="elem">&gt;</span><span class="text">meterable resource</span><span class="elem">&lt;/rdfs:label&gt;</span>
+    <span class="elem">&lt;rdfs:comment</span><span class="elem">&gt;</span>
+      <span class="text">A physical phenomenon that can be quantified in one or more dimensions.</span>
+    <span class="elem">&lt;/rdfs:comment&gt;</span>
+    <span class="elem">&lt;rdfs:isDefinedBy</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#</span>"<span class="elem">/&gt;</span>
+  <span class="elem">&lt;/owl:Class&gt;</span>
+  
+  <span class="elem">&lt;meter:MeterableResource</span> <span class="attr">rdf:about</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#electricity</span>"<span class="elem">&gt;</span>
+    <span class="elem">&lt;rdfs:label</span><span class="elem">&gt;</span><span class="text">electricity</span><span class="elem">&lt;/rdfs:label&gt;</span>
+    <span class="elem">&lt;skos:exactMatch</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://dbpedia.org/resource/Electricity</span>"<span class="elem">/&gt;</span>
+    <span class="elem">&lt;rdfs:isDefinedBy</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#</span>"<span class="elem">/&gt;</span>
+  <span class="elem">&lt;/meter:MeterableResource&gt;</span>
+  
+  <span class="elem">&lt;meter:MeterableResource</span> <span class="attr">rdf:about</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#data</span>"<span class="elem">&gt;</span>
+    <span class="elem">&lt;rdfs:label</span><span class="elem">&gt;</span><span class="text">data</span><span class="elem">&lt;/rdfs:label&gt;</span>
+    <span class="elem">&lt;skos:exactMatch</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://dbpedia.org/resource/Data_(computing)</span>"<span class="elem">/&gt;</span>
+    <span class="elem">&lt;rdfs:isDefinedBy</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#</span>"<span class="elem">/&gt;</span>
+  <span class="elem">&lt;/meter:MeterableResource&gt;</span>
+  
+  <span class="elem">&lt;meter:MeterableResource</span> <span class="attr">rdf:about</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#water</span>"<span class="elem">&gt;</span>
+    <span class="elem">&lt;rdfs:label</span><span class="elem">&gt;</span><span class="text">water</span><span class="elem">&lt;/rdfs:label&gt;</span>
+    <span class="elem">&lt;skos:exactMatch</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://dbpedia.org/resource/Water</span>"<span class="elem">/&gt;</span>
+    <span class="elem">&lt;rdfs:isDefinedBy</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#</span>"<span class="elem">/&gt;</span>
+  <span class="elem">&lt;/meter:MeterableResource&gt;</span>
+  
+  <span class="elem">&lt;meter:MeterableResource</span> <span class="attr">rdf:about</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#natural-gas</span>"<span class="elem">&gt;</span>
+    <span class="elem">&lt;rdfs:label</span><span class="elem">&gt;</span><span class="text">natural gas</span><span class="elem">&lt;/rdfs:label&gt;</span>
+    <span class="elem">&lt;skos:exactMatch</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://dbpedia.org/resource/Natural_gas</span>"<span class="elem">/&gt;</span>
+    <span class="elem">&lt;rdfs:isDefinedBy</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#</span>"<span class="elem">/&gt;</span>
+  <span class="elem">&lt;/meter:MeterableResource&gt;</span>
+  
+  <span class="elem">&lt;owl:Class</span> <span class="attr">rdf:about</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#Metric</span>"<span class="elem">&gt;</span>
+    <span class="elem">&lt;rdfs:label</span><span class="elem">&gt;</span><span class="text">metering metric</span><span class="elem">&lt;/rdfs:label&gt;</span>
+    <span class="elem">&lt;rdfs:comment</span><span class="elem">&gt;</span><span class="text">An abstract class for metering metrics.</span><span class="elem">&lt;/rdfs:comment&gt;</span>
+    <span class="elem">&lt;rdfs:isDefinedBy</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#</span>"<span class="elem">/&gt;</span>
+  <span class="elem">&lt;/owl:Class&gt;</span>
+  
+  <span class="elem">&lt;owl:Class</span> <span class="attr">rdf:about</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#InstantaneousMetric</span>"<span class="elem">&gt;</span>
+    <span class="elem">&lt;rdfs:label</span><span class="elem">&gt;</span><span class="text">instananeous metering metric</span><span class="elem">&lt;/rdfs:label&gt;</span>
+    <span class="elem">&lt;rdfs:comment</span><span class="elem">&gt;</span><span class="text">A class for metrics measured at a single point in time.</span><span class="elem">&lt;/rdfs:comment&gt;</span>
+    <span class="elem">&lt;rdfs:subClassOf</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#Metric</span>"<span class="elem">/&gt;</span>
+    <span class="elem">&lt;rdfs:isDefinedBy</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#</span>"<span class="elem">/&gt;</span>
+  <span class="elem">&lt;/owl:Class&gt;</span>
+  
+  <span class="elem">&lt;owl:Class</span> <span class="attr">rdf:about</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#CumulativeMetric</span>"<span class="elem">&gt;</span>
+    <span class="elem">&lt;rdfs:label</span><span class="elem">&gt;</span><span class="text">cumulative metering metric</span><span class="elem">&lt;/rdfs:label&gt;</span>
+    <span class="elem">&lt;rdfs:comment</span><span class="elem">&gt;</span>
+      <span class="text">A class for metrics measured relative to some other point in the past.</span>
+    <span class="elem">&lt;/rdfs:comment&gt;</span>
+    <span class="elem">&lt;rdfs:subClassOf</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#Metric</span>"<span class="elem">/&gt;</span>
+    <span class="elem">&lt;rdfs:isDefinedBy</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#</span>"<span class="elem">/&gt;</span>
+  <span class="elem">&lt;/owl:Class&gt;</span>
+  
+  <span class="elem">&lt;owl:InstantaneousMetric</span> <span class="attr">rdf:about</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#voltage</span>"<span class="elem">&gt;</span>
+    <span class="elem">&lt;rdfs:label</span><span class="elem">&gt;</span><span class="text">voltage</span><span class="elem">&lt;/rdfs:label&gt;</span>
+    <span class="elem">&lt;rdfs:comment</span><span class="elem">&gt;</span><span class="text">RMS potential difference measured across a single phase load</span><span class="elem">&lt;/rdfs:comment&gt;</span>
+    <span class="elem">&lt;meter:unit</span><span class="elem">&gt;</span><span class="text">Volts</span><span class="elem">&lt;/meter:unit&gt;</span>
+    <span class="elem">&lt;meter:unitAbbrev</span><span class="elem">&gt;</span><span class="text">V</span><span class="elem">&lt;/meter:unitAbbrev&gt;</span>
+    <span class="elem">&lt;rdfs:isDefinedBy</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#</span>"<span class="elem">/&gt;</span>
+  <span class="elem">&lt;/owl:InstantaneousMetric&gt;</span>
+  
+  <span class="elem">&lt;rdf:Property</span> <span class="attr">rdf:about</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#unit</span>"<span class="elem">&gt;</span>
+    <span class="elem">&lt;rdfs:label</span><span class="elem">&gt;</span><span class="text">name of units used</span><span class="elem">&lt;/rdfs:label&gt;</span>
+    <span class="elem">&lt;rdfs:comment</span><span class="elem">&gt;</span>
+      <span class="text">The unabbreviated name of the units used when recording a given metric.</span>
+    <span class="elem">&lt;/rdfs:comment&gt;</span>
+    <span class="elem">&lt;rdfs:domain</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#Metric</span>"<span class="elem">/&gt;</span>
+    <span class="elem">&lt;rdfs:range</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://www.w3.org/2001/XMLSchema#string</span>"<span class="elem">/&gt;</span>
+    <span class="elem">&lt;rdfs:isDefinedBy</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#</span>"<span class="elem">/&gt;</span>
+  <span class="elem">&lt;/rdf:Property&gt;</span>
+  
+  <span class="elem">&lt;rdf:Property</span> <span class="attr">rdf:about</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#unitAbbrev</span>"<span class="elem">&gt;</span>
+    <span class="elem">&lt;rdfs:label</span><span class="elem">&gt;</span><span class="text">abbreviated name of units used</span><span class="elem">&lt;/rdfs:label&gt;</span>
+    <span class="elem">&lt;rdfs:comment</span><span class="elem">&gt;</span>
+      <span class="text">The abbreviated name of the units used when recording a given metric.</span>
+    <span class="elem">&lt;/rdfs:comment&gt;</span>
+    <span class="elem">&lt;rdfs:domain</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#Metric</span>"<span class="elem">/&gt;</span>
+    <span class="elem">&lt;rdfs:range</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://www.w3.org/2001/XMLSchema#string</span>"<span class="elem">/&gt;</span>
+    <span class="elem">&lt;rdfs:isDefinedBy</span> <span class="attr">rdf:resource</span>="<span class="attrVal">http://vocab.ox.ac.uk/meter#</span>"<span class="elem">/&gt;</span>
+  <span class="elem">&lt;/rdf:Property&gt;</span>
+<span class="elem">&lt;/rdf:RDF&gt;</span>
+</code></pre><div id="footer">
+      Documentation generated using the <a href="http://vocab.org/2004/03/toolchain">vocab.org toolchain</a>.
+    </div></body></html>
