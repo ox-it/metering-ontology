@@ -22,7 +22,7 @@
     xmlns:rdfs="&rdfs;"
     xmlns:dc="http://purl.org/dc/elements/1.1/"
     xmlns:dctype="&dctype;"
-    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
     xmlns:vann="http://purl.org/vocab/vann/"
     xmlns:owl="http://www.w3.org/2002/07/owl#">
 
@@ -33,7 +33,7 @@
     <vann:preferredNamespaceUri>http://vocab.ox.ac.uk/meter#</vann:preferredNamespaceUri>
     <vann:preferredNamespacePrefix>meter</vann:preferredNamespacePrefix>
 
-    <dct:isVersionOf rdf:resource="&meter;"/>
+    <dcterms:isVersionOf rdf:resource="&meter;"/>
 
     <dc:contributor rdf:resource="http://alexdutton.co.uk/rdf#id"/>
     <dc:contributor>
@@ -42,35 +42,88 @@
       </foaf:Person>
     </dc:contributor>
 
-    <dct:hasFormat>
+    <dcterms:hasFormat>
       <dctype:Text rdf:about="http://vocab.ox.ac.uk/meter/index.html">
         <dc:format>
-          <dct:IMT>
+          <dcterms:IMT>
             <rdf:value>text/html</rdf:value>
             <rdfs:label xml:lang="en">HTML</rdfs:label>
-          </dct:IMT>
+          </dcterms:IMT>
         </dc:format>
       </dctype:Text>
-    </dct:hasFormat>
+    </dcterms:hasFormat>
 
-    <dct:hasFormat>
+    <dcterms:hasFormat>
       <dctype:Text rdf:about="http://vocab.ox.ac.uk/meter/index.rdf">
         <dc:format>
-          <dct:IMT>
+          <dcterms:IMT>
             <rdf:value>application/rdf+xml</rdf:value>
             <rdfs:label xml:lang="en">RDF/XML</rdfs:label>
-          </dct:IMT>
+          </dcterms:IMT>
         </dc:format>
       </dctype:Text>
-    </dct:hasFormat>
+    </dcterms:hasFormat>
 
   </owl:Ontology>
+
+
+  <owl:Class rdf:about="&meter;Meter">
+    <rdfs:label>a physical meter</rdfs:label>
+    <rdfs:comment>A meter at which measurements can be made</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+    skos:exactMatch rdf:resource="http://dbpedia.org/resource/Measuring_instrument"/>
+  </owl:Class>
 
   <owl:Class rdf:about="&meter;MeterableResource">
     <rdfs:label>meterable resource</rdfs:label>
     <rdfs:comment>A physical phenomenon that can be quantified in one or more dimensions.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="&meter;"/>
   </owl:Class>
+
+  <owl:Class rdf:about="&meter;Metric">
+    <rdfs:label>metering metric</rdfs:label>
+    <rdfs:comment>An abstract class for metering metrics.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="&meter;InstantaneousMetric">
+    <rdfs:label>instananeous metering metric</rdfs:label>
+    <rdfs:comment>A class for metrics measured at a single point in time.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="&meter;Metric"/>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+  </owl:Class>
+  <owl:Class rdf:about="&meter;CumulativeMetric">
+    <rdfs:label>cumulative metering metric</rdfs:label>
+    <rdfs:comment>A class for metrics measured relative to some other point in the past.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="&meter;Metric"/>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="&meter;Unit">
+    <rdfs:label>dimensional unit</rdfs:label>
+    <rdfs:comment>A unit of measurement</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+    <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Unit_of_measurement"/>
+  </owl:Class>
+
+  <rdf:Property rdf:about="&meter;unit">
+    <rdfs:label>name of units used</rdfs:label>
+    <rdfs:comment>The unit used when recording the metric.</rdfs:comment>
+    <rdfs:domain rdf:resource="&meter;Metric"/>
+    <rdfs:range rdf:resource="&meter;Unit"/>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="&meter;unitSymbol">
+    <rdfs:label>unit symbol</rdfs:label>
+    <rdfs:comment>The abbreviated symbol for a Unit</rdfs:comment>
+    <rdfs:domain rdf:resource="&meter;Unit"/>
+    <rdfs:range rdf:resource="&xsd;String"/>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+  </rdf:Property>
+
+
+  <!-- Meterable resources -->
 
   <meter:MeterableResource rdf:about="&meter;electricity">
     <rdfs:label>electricity</rdfs:label>
@@ -93,48 +146,75 @@
     <rdfs:isDefinedBy rdf:resource="&meter;"/>
   </meter:MeterableResource>
 
-  <owl:Class rdf:about="&meter;Metric">
-    <rdfs:label>metering metric</rdfs:label>
-    <rdfs:comment>An abstract class for metering metrics.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="&meter;"/>
-  </owl:Class>
 
-  <owl:Class rdf:about="&meter;InstantaneousMetric">
-    <rdfs:label>instananeous metering metric</rdfs:label>
-    <rdfs:comment>A class for metrics measured at a single point in time.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="&meter;Metric"/>
-    <rdfs:isDefinedBy rdf:resource="&meter;"/>
-  </owl:Class>
-  <owl:Class rdf:about="&meter;CumulativeMetric">
-    <rdfs:label>cumulative metering metric</rdfs:label>
-    <rdfs:comment>A class for metrics measured relative to some other point in the past.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="&meter;Metric"/>
-    <rdfs:isDefinedBy rdf:resource="&meter;"/>
-  </owl:Class>
+  <!-- Metrics -->
 
-  <owl:InstantaneousMetric rdf:about="&meter;voltage">
+  <meter:InstantaneousMetric rdf:about="&meter;voltage">
     <rdfs:label>voltage</rdfs:label>
     <rdfs:comment>RMS potential difference measured across a single phase load</rdfs:comment>
-    <meter:unit>Volts</meter:unit>
-    <meter:unitAbbrev>V</meter:unitAbbrev>
     <rdfs:isDefinedBy rdf:resource="&meter;"/>
-  </owl:InstantaneousMetric>
+    <meter:unit rdf:resource="&meter;volt"/>
+    <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Voltage"/>
+  </meter:InstantaneousMetric>
+
+  <meter:InstantaneousMetric rdf:about="&meter;current">
+    <rdfs:label>current</rdfs:label>
+    <rdfs:comment>The current drawn by a load</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+    <meter:unit rdf:resource="&meter;ampere"/>
+    <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Electric_current"/>
+  </meter:InstantaneousMetric>
+
+  <meter:InstantaneousMetric rdf:about="&meter;power-draw">
+    <rdfs:label>power draw</rdfs:label>
+    <rdfs:comment>The rate at which energy is consumed by the load.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+    <meter:unit rdf:resource="&meter;watt"/>
+    <meter:cumulative-metric rdf:resource="&meter;energy-consumed"/>
+    <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Power_(physics)"/>
+  </meter:InstantaneousMetric>
+
+  <meter:CumulativeMetric rdf:about="&meter;energy-consumed">
+    <rdfs:label>energy consumed</rdfs:label>
+    <rdfs:comment>The quantity of energy consumed downstream.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+    <meter:unit rdf:resource="&meter;joule"/>
+    <meter:instananeous-metric rdf:resource="&meter;power-draw"/>
+    <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Energy"/>
+  </meter:CumulativeMetric>
 
 
-  <rdf:Property rdf:about="&meter;unit">
-    <rdfs:label>name of units used</rdfs:label>
-    <rdfs:comment>The unabbreviated name of the units used when recording a given metric.</rdfs:comment>
-    <rdfs:domain rdf:resource="&meter;Metric"/>
-    <rdfs:range rdf:resource="&xsd;string"/>
-    <rdfs:isDefinedBy rdf:resource="&meter;"/>
-  </rdf:Property>
 
-  <rdf:Property rdf:about="&meter;unitAbbrev">
-    <rdfs:label>abbreviated name of units used</rdfs:label>
-    <rdfs:comment>The abbreviated name of the units used when recording a given metric.</rdfs:comment>
-    <rdfs:domain rdf:resource="&meter;Metric"/>
-    <rdfs:range rdf:resource="&xsd;string"/>
+  <!-- Units -->
+
+  <meter:Unit rdf:about="&meter;volt">
+    <rdfs:label>Volt</rdfs:label>
+    <meter:unitSymbol>V</meter:unitSymbol>
     <rdfs:isDefinedBy rdf:resource="&meter;"/>
-  </rdf:Property>
+    <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Volt"/>
+  </meter:Unit>
+
+  <meter:Unit rdf:about="&meter;ampere"/>
+    <rdfs:label>Ampere</rdfs:label>
+    <meter:unitSymbol>A</meter:unitSymbol>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+    <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Ampere"/>
+  </meter:Unit>
+
+  <meter:Unit rdf:about="&meter;watt"/>
+    <rdfs:label>Watt</rdfs:label>
+    <meter:unitSymbol>W</meter:unitSymbol>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+    <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Watt"/>
+  </meter:Unit>
+
+  <meter:Unit rdf:about="&meter;joule"/>
+    <rdfs:label>Joule</rdfs:label>
+    <meter:unitSymbol>J</meter:unitSymbol>
+    <rdfs:isDefinedBy rdf:resource="&meter;"/>
+    <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Joule"/>
+  </meter:Unit>
+
+
 
 </rdf:RDF>
